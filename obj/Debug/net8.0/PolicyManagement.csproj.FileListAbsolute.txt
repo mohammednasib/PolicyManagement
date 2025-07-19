@@ -39,3 +39,4 @@ C:\Users\moham\OneDrive\Desktop\New folder (2)\PolicyManagement\obj\Debug\net8.0
 C:\Users\moham\OneDrive\Desktop\New folder (2)\PolicyManagement\obj\Debug\net8.0\PolicyManagement.pdb
 C:\Users\moham\OneDrive\Desktop\New folder (2)\PolicyManagement\obj\Debug\net8.0\PolicyManagement.genruntimeconfig.cache
 C:\Users\moham\OneDrive\Desktop\New folder (2)\PolicyManagement\obj\Debug\net8.0\ref\PolicyManagement.dll
+C:\Users\moham\OneDrive\Desktop\New folder (2)\PolicyManagement\obj\Debug\net8.0\PolicyManagement.sourcelink.json

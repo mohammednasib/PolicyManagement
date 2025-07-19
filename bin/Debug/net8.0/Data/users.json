@@ -1,11 +1,12 @@
 [
+  
   {
-    "username": "admin",
-    "password": "admin123",
-    "name": "Admin User",
-    "userId": "1",
-    "roles": [ "Admin" ],
-    "permissions": [ "Policy.Add", "Policy.Edit", "Policy.Delete", "Policy.List", "Document.List" ]
+    "Username": "admin",
+    "Password": "admin123",
+    "Name": "Admin User",
+    "UserId": "1",
+    "Roles": [ "Admin" ],
+    "Permissions": [ "Policy.Add", "Policy.Edit", "Policy.Delete", "Policy.List", "Document.List" ]
   },
   {
     "username": "editor",

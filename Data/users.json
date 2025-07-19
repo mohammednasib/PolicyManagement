@@ -1,18 +1,38 @@
 [
   {
-    "username": "admin",
-    "password": "admin123",
-    "name": "Admin User",
-    "userId": "1",
-    "roles": [ "Admin" ],
-    "permissions": [ "Policy.Add", "Policy.Edit", "Policy.Delete", "Policy.List", "Document.List" ]
+    "UserId": "1",
+    "Name": "Admin User",
+    "Username": "admin",
+    "Password": "admin123",
+    "Roles": [
+      "Admin"
+    ],
+    "Permissions": [
+      "Policy.Add",
+      "Policy.Edit",
+      "Policy.Delete",
+      "Policy.List",
+      "Document.List"
+    ]
   },
   {
-    "username": "editor",
-    "password": "editor123",
-    "name": "Editor User",
-    "userId": "2",
-    "roles": [ "Editor" ],
-    "permissions": [ "Policy.List", "Policy.Edit", "Document.List", "Document.Add" ]
+    "UserId": null,
+    "Name": null,
+    "Username": null,
+    "Password": null,
+    "Roles": null,
+    "Permissions": null
+  },
+  {
+    "UserId": "5",
+    "Name": "Test User",
+    "Username": "testuser",
+    "Password": "test123",
+    "Roles": [
+      "Viewer"
+    ],
+    "Permissions": [
+      "Document.List"
+    ]
   }
 ]

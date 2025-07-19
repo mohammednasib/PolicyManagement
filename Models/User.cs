@@ -2,10 +2,10 @@ namespace PolicyManagement.Models;
 
 public class User
 {
-    public required string Username { get; set; }
-    public required string Password { get; set; }
-    public required string Name { get; set; }
-    public required string UserId { get; set; }
-    public required List<string> Roles { get; set; }
-    public required List<string> Permissions { get; set; }
+    public string UserId { get; set; }
+    public string Name { get; set; }
+    public string Username { get; set; }
+    public string Password { get; set; }
+    public List<string> Roles { get; set; }
+    public List<string> Permissions { get; set; }
 }
