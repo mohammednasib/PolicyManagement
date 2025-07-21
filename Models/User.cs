@@ -1,11 +1,12 @@
-namespace PolicyManagement.Models;
-
-public class User
+namespace PolicyManagement.Models
 {
-    public string UserId { get; set; }
-    public string Name { get; set; }
-    public string Username { get; set; }
-    public string Password { get; set; }
-    public List<string> Roles { get; set; }
-    public List<string> Permissions { get; set; }
+    public class User
+    {
+        public string UserId { get; set; } = string.Empty;
+        public string Name { get; set; } = string.Empty;
+        public string Username { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
+        public List<string> Roles { get; set; } = new();
+        public List<string> Permissions { get; set; } = new();
+    }
 }

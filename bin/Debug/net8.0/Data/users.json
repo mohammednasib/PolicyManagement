@@ -1,19 +1,54 @@
 [
-  
   {
+    "UserId": "1",
+    "Name": "Admin User",
     "Username": "admin",
     "Password": "admin123",
-    "Name": "Admin User",
-    "UserId": "1",
-    "Roles": [ "Admin" ],
-    "Permissions": [ "Policy.Add", "Policy.Edit", "Policy.Delete", "Policy.List", "Document.List" ]
+    "Roles": [
+      "Admin"
+    ],
+    "Permissions": [
+      "Policy.Add",
+      "Policy.Edit",
+      "Policy.Delete",
+      "Policy.List",
+      "Document.List"
+    ]
   },
   {
-    "username": "editor",
-    "password": "editor123",
-    "name": "Editor User",
-    "userId": "2",
-    "roles": [ "Editor" ],
-    "permissions": [ "Policy.List", "Policy.Edit", "Document.List", "Document.Add" ]
+    "UserId": null,
+    "Name": null,
+    "Username": null,
+    "Password": null,
+    "Roles": null,
+    "Permissions": null
+  },
+  {
+    "UserId": "5",
+    "Name": "Test User",
+    "Username": "testuser",
+    "Password": "test123",
+    "Roles": [
+      "Viewer"
+    ],
+    "Permissions": [
+      "Document.List"
+    ]
+  },
+  {
+    "UserId": "6",
+    "Name": "Software Developer",
+    "Username": "softdeveloper",
+    "Password": "softdev123",
+    "Roles": [],
+    "Permissions": []
+  },
+  {
+    "UserId": "7",
+    "Name": "Software Developer",
+    "Username": "engineer",
+    "Password": "softdev123",
+    "Roles": [],
+    "Permissions": []
   }
 ]
