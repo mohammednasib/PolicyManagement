@@ -1,112 +1,82 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
-using System.Text.Json;
 using PolicyManagement.Models;
+using PolicyManagement.Models.DTOs;
 using PolicyManagement.Services;
-using System.ComponentModel.DataAnnotations;
+using PolicyManagement.Helpers;
 
-namespace PolicyManagement.Controllers
+namespace PolicyManagement.Controllers;
+
+[ApiController]
+[Route("api/[controller]")]
+public class AuthController : ControllerBase
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class AuthController : ControllerBase
+    private readonly IUserService _userService;
+    private readonly IConfiguration _config;
+
+    public AuthController(IUserService userService, IConfiguration config)
     {
-        private readonly IUserService _userService;
-        private readonly IConfiguration _config;
-        private readonly string _jsonPath;
+        _userService = userService;
+        _config = config;
+    }
 
-        public AuthController(IUserService userService, IConfiguration config)
+    [HttpPost("register")]
+    public IActionResult Register(RegisterRequest request)
+    {
+        var user = new User
         {
-            _userService = userService;
-            _config = config;
-            _jsonPath = Path.Combine(Directory.GetCurrentDirectory(), "Data", "users.json");
-        }
+            Name = request.Name,
+            Username = request.Username,
+            PasswordHash = request.Password, // Will be hashed in service
+            Roles = request.Roles,
+            Permissions = request.Permissions
+        };
 
-        // ✅ LOGIN
-        [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] LoginRequest request)
+        try
         {
-            if (!ModelState.IsValid) return BadRequest(ModelState);
-
-            var user = await _userService.AuthenticateAsync(request.Username, request.Password);
-            if (user == null) return Unauthorized("Invalid credentials");
-
-            var claims = new List<Claim>
-            {
-                new Claim("userId", user.UserId),
-                new Claim("name", user.Name),
-                new Claim("username", user.Username)
-            };
-
-            claims.AddRange(user.Roles.Select(role => new Claim(ClaimTypes.Role, role)));
-            claims.AddRange(user.Permissions.Select(p => new Claim("permission", p)));
-
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]!));
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-
-            var token = new JwtSecurityToken(
-                issuer: _config["Jwt:Issuer"],
-                audience: _config["Jwt:Audience"],
-                claims: claims,
-                expires: DateTime.UtcNow.AddHours(1),
-                signingCredentials: creds
-            );
-
-            return Ok(new { token = new JwtSecurityTokenHandler().WriteToken(token) });
+            _userService.AddUser(user);
+            return Ok(new { message = "User registered successfully", username = user.Username });
         }
-
-        // ✅ REGISTER NEW USER
-        [HttpPost("register")]
-        public IActionResult Register([FromBody] RegisterRequest request)
+        catch (Exception ex)
         {
-            if (!ModelState.IsValid) return BadRequest(ModelState);
-
-            var json = System.IO.File.ReadAllText(_jsonPath);
-            var users = JsonSerializer.Deserialize<List<User>>(json) ?? new List<User>();
-
-            if (users.Any(u => u.UserId == request.UserId))
-                return Conflict("UserId already exists");
-
-            if (users.Any(u => u.Username == request.Username))
-                return Conflict("Username already exists");
-
-            var newUser = new User
-            {
-                UserId = request.UserId,
-                Name = request.Name,
-                Username = request.Username,
-                Password = request.Password,
-                Roles = new List<string>(),
-                Permissions = new List<string>()
-            };
-
-            users.Add(newUser);
-            System.IO.File.WriteAllText(_jsonPath, JsonSerializer.Serialize(users, new JsonSerializerOptions { WriteIndented = true }));
-
-            return Ok("User registered successfully");
+            return BadRequest(new { message = ex.Message });
         }
+    }
 
-        // ✅ ADD ROLES AND PERMISSIONS TO USER
-        [HttpPost("add-roles-permissions")]
-        public IActionResult AddRolesPermissions([FromBody] RolePermissionRequest request)
+    [HttpPost("login")]
+    public async Task<IActionResult> Login(LoginRequest request)
+    {
+        var user = await _userService.AuthenticateAsync(request.Username, request.Password);
+        if (user == null) return Unauthorized("Invalid credentials");
+
+        var token = TokenHelper.GenerateJwtToken(user, _config);
+        var refreshToken = TokenHelper.GenerateRefreshToken();
+
+        user.RefreshToken = refreshToken;
+        user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7);
+
+        return Ok(new
         {
-            if (!ModelState.IsValid) return BadRequest(ModelState);
+            token,
+            refreshToken,
+            username = user.Username
+        });
+    }
 
-            var json = System.IO.File.ReadAllText(_jsonPath);
-            var users = JsonSerializer.Deserialize<List<User>>(json) ?? new List<User>();
+    [HttpPost("refresh")]
+    public IActionResult RefreshToken(TokenRequest tokenRequest)
+    {
+        var user = _userService.GetAllUsers()
+            .FirstOrDefault(u => u.RefreshToken == tokenRequest.RefreshToken);
 
-            var user = users.FirstOrDefault(u => u.Username == request.Username);
-            if (user == null) return NotFound("User not found");
+        if (user == null || user.RefreshTokenExpiryTime < DateTime.UtcNow)
+            return Unauthorized("Invalid or expired refresh token");
 
-            user.Roles = request.Roles;
-            user.Permissions = request.Permissions;
+        var newToken = TokenHelper.GenerateJwtToken(user, _config);
+        var newRefresh = TokenHelper.GenerateRefreshToken();
 
-            System.IO.File.WriteAllText(_jsonPath, JsonSerializer.Serialize(users, new JsonSerializerOptions { WriteIndented = true }));
+        user.RefreshToken = newRefresh;
+        user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7);
 
-            return Ok("Roles and permissions updated successfully");
-        }
+        return Ok(new { token = newToken, refreshToken = newRefresh });
     }
 }

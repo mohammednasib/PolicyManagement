@@ -1,0 +1,82 @@
+[
+  {
+    "UserId": "54",
+    "Name": "Test User",
+    "Username": "user5",
+    "Password": "$2a$11$gtSaHhXnpxbmifpRfejveuDqXmNRXqnNJ/x4tdKg.wzkpTTEpNwI2",
+    "Roles": [
+      "User"
+    ],
+    "Permissions": [
+      "read"
+    ],
+    "RefreshToken": "",
+    "RefreshTokenExpiryTime": "2025-07-23T15:32:51.0481917Z"
+  },
+  {
+    "UserId": "67",
+    "Name": "Test User",
+    "Username": "nasib",
+    "Password": "$2a$11$zhPuEw6uig/G3nRI4jeT9ue5QJ3V2phPAZEDHQapydKv.dAps1u9m",
+    "Roles": [
+      "User"
+    ],
+    "Permissions": [
+      "read"
+    ],
+    "RefreshToken": "",
+    "RefreshTokenExpiryTime": "2025-07-23T15:35:04.1779275Z"
+  },
+  {
+    "UserId": "98",
+    "Name": "Test User",
+    "Username": "nasib1",
+    "Password": "$2a$11$3/uG0A0ZN55NYq5eE0paNuAajK2MYSfc6OA0MiNYJjTu3Qp6GeSFq",
+    "Roles": [
+      "User"
+    ],
+    "Permissions": [
+      "read"
+    ],
+    "RefreshToken": "",
+    "RefreshTokenExpiryTime": "2025-07-23T15:55:34.6640614Z"
+  },
+  {
+    "UserId": "34",
+    "Name": "Test User",
+    "Username": "nasib01",
+    "Password": "$2a$11$RFay7aHnGQK7XcSRo1kPTeUyS6f.oi6lW3r0/s9dETinDmpJzgsQ6",
+    "Roles": [
+      "User"
+    ],
+    "Permissions": [
+      "read"
+    ],
+    "RefreshToken": "",
+    "RefreshTokenExpiryTime": "2025-07-23T15:59:20.0594683Z"
+  },
+  {
+    "UserId": "24",
+    "Name": "Test User",
+    "Username": "hi",
+    "Password": "$2a$11$evGMe8zzyABqfLzKL4/F3eZpSfPDdWBxgaCh1SgmzSPMC.DyQumne",
+    "Roles": [
+      "User"
+    ],
+    "Permissions": [
+      "read"
+    ],
+    "RefreshToken": "TNydZ8ZxTt6sZZ54M3gk2ZD43BNkPwlatvLQeU9gjo0=",
+    "RefreshTokenExpiryTime": "2025-07-30T16:18:22.1261032Z"
+  },
+  {
+    "UserId": "29",
+    "Name": "Test User",
+    "Username": "hello",
+    "Password": "$2a$11$mt5lyf0v7eQzRLtvrgYSs.iAbAocuWvGJDz8a5DcNDEDuJYzbnKbq",
+    "Roles": [],
+    "Permissions": [],
+    "RefreshToken": "p4SZQFxnv4XCSfgbBBDB82hn4Kh8uxL\u002BgdEeyBometC9QLcg155O8rvqcUcSt\u002BCZza2NA98qyrZCpGjZSw1MiA==",
+    "RefreshTokenExpiryTime": "2025-07-30T16:46:28.3586813Z"
+  }
+]

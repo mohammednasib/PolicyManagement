@@ -1,5 +1,8 @@
-using Microsoft.AspNetCore.Mvc;
+
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+
+namespace PolicyManagement.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -11,5 +14,5 @@ public class DocumentController : ControllerBase
 
     [HttpGet("list")]
     [Authorize(Policy = "Document.List")]
-    public IActionResult List() => Ok("List of documents");
+    public IActionResult List() => Ok("List of documents");
 }

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PolicyManagement")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fc3986ae85837ce84f023b8bf593d364d9dc2af7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c9adba3d17532d621bb396031babbaf5953f13fc")]
 [assembly: System.Reflection.AssemblyProductAttribute("PolicyManagement")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PolicyManagement")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -40,3 +40,9 @@ C:\Users\moham\OneDrive\Desktop\New folder (2)\PolicyManagement\obj\Debug\net8.0
 C:\Users\moham\OneDrive\Desktop\New folder (2)\PolicyManagement\obj\Debug\net8.0\PolicyManagement.genruntimeconfig.cache
 C:\Users\moham\OneDrive\Desktop\New folder (2)\PolicyManagement\obj\Debug\net8.0\ref\PolicyManagement.dll
 C:\Users\moham\OneDrive\Desktop\New folder (2)\PolicyManagement\obj\Debug\net8.0\PolicyManagement.sourcelink.json
+C:\Users\moham\OneDrive\Desktop\New folder (2)\PolicyManagement\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Users\moham\OneDrive\Desktop\New folder (2)\PolicyManagement\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\moham\OneDrive\Desktop\New folder (2)\PolicyManagement\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+C:\Users\moham\OneDrive\Desktop\New folder (2)\PolicyManagement\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\moham\OneDrive\Desktop\New folder (2)\PolicyManagement\bin\Debug\net8.0\users.json
+C:\Users\moham\OneDrive\Desktop\New folder (2)\PolicyManagement\bin\Debug\net8.0\Newtonsoft.Json.dll

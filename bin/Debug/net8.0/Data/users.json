@@ -3,7 +3,7 @@
     "UserId": "1",
     "Name": "Admin User",
     "Username": "admin",
-    "Password": "admin123",
+    "PasswordHash": "",
     "Roles": [
       "Admin"
     ],
@@ -13,42 +13,131 @@
       "Policy.Delete",
       "Policy.List",
       "Document.List"
-    ]
+    ],
+    "RefreshToken": "cd742d0d-10ef-4cf4-af7d-a4bd91254927",
+    "RefreshTokenExpiryTime": "2025-07-30T15:11:49.6502914Z"
   },
   {
-    "UserId": null,
-    "Name": null,
-    "Username": null,
-    "Password": null,
-    "Roles": null,
-    "Permissions": null
+    "UserId": "2",
+    "Name": "Manager User",
+    "Username": "manager",
+    "PasswordHash": "",
+    "Roles": [
+      "Manager"
+    ],
+    "Permissions": [
+      "Policy.Add",
+      "Policy.Edit",
+      "Policy.List",
+      "Document.List"
+    ],
+    "RefreshToken": "",
+    "RefreshTokenExpiryTime": "0001-01-01T00:00:00"
   },
   {
-    "UserId": "5",
-    "Name": "Test User",
-    "Username": "testuser",
-    "Password": "test123",
+    "UserId": "3",
+    "Name": "Editor User",
+    "Username": "editor",
+    "PasswordHash": "",
+    "Roles": [
+      "Editor"
+    ],
+    "Permissions": [
+      "Policy.Edit",
+      "Document.List"
+    ],
+    "RefreshToken": "9925d5da-4e30-4691-bace-f3a1896b8e8d",
+    "RefreshTokenExpiryTime": "2025-07-30T15:14:58.2586899Z"
+  },
+  {
+    "UserId": "4",
+    "Name": "Viewer User",
+    "Username": "viewer",
+    "PasswordHash": "",
     "Roles": [
       "Viewer"
     ],
     "Permissions": [
       "Document.List"
-    ]
+    ],
+    "RefreshToken": "",
+    "RefreshTokenExpiryTime": "0001-01-01T00:00:00"
   },
   {
-    "UserId": "6",
-    "Name": "Software Developer",
-    "Username": "softdeveloper",
-    "Password": "softdev123",
-    "Roles": [],
-    "Permissions": []
+    "UserId": "5",
+    "Name": "Test User",
+    "Username": "testuser",
+    "PasswordHash": "",
+    "Roles": [
+      "Viewer"
+    ],
+    "Permissions": [
+      "Document.List"
+    ],
+    "RefreshToken": "e0dc84f2-6345-4f63-a9b4-d6956dfa4cb5",
+    "RefreshTokenExpiryTime": "2025-07-29T18:23:48.535302Z"
   },
   {
-    "UserId": "7",
-    "Name": "Software Developer",
-    "Username": "engineer",
-    "Password": "softdev123",
+    "UserId": "u10025",
+    "Name": "Another User",
+    "Username": "anotheruser123",
+    "PasswordHash": "",
     "Roles": [],
-    "Permissions": []
+    "Permissions": [],
+    "RefreshToken": "",
+    "RefreshTokenExpiryTime": "0001-01-01T00:00:00"
+  },
+  {
+    "UserId": "u100233",
+    "Name": "Another User",
+    "Username": "anotheruser1234",
+    "PasswordHash": "",
+    "Roles": [
+      "Develop software"
+    ],
+    "Permissions": [
+      "policy.add"
+    ],
+    "RefreshToken": "",
+    "RefreshTokenExpiryTime": "0001-01-01T00:00:00"
+  },
+  {
+    "UserId": "u1002334",
+    "Name": "User 5",
+    "Username": "anotheruser12345",
+    "PasswordHash": "",
+    "Roles": [],
+    "Permissions": [],
+    "RefreshToken": "",
+    "RefreshTokenExpiryTime": "0001-01-01T00:00:00"
+  },
+  {
+    "UserId": "u100234",
+    "Name": "User 5",
+    "Username": "anotheruser1345",
+    "PasswordHash": "",
+    "Roles": [],
+    "Permissions": [],
+    "RefreshToken": "",
+    "RefreshTokenExpiryTime": "0001-01-01T00:00:00"
+  },
+  {
+    "UserId": "dec3f884-32f5-49de-a56a-5c48fa6dae14",
+    "Name": "nasib",
+    "Username": "nasib1",
+    "PasswordHash": "$2a$11$ioJ9OiFMXvR/i07peMCAeu07r7RnweUP/wsXxH0dd4Dh81uIlHYyC",
+    "Roles": [
+      "Admin"
+    ],
+    "Permissions": [
+      "Policy.Add",
+      "Policy.List",
+      "Policy.Edit",
+      "Policy.Delete",
+      "Document.Add",
+      "Document.List"
+    ],
+    "RefreshToken": null,
+    "RefreshTokenExpiryTime": null
   }
 ]
