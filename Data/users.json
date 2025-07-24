@@ -139,5 +139,24 @@
     ],
     "RefreshToken": "",
     "RefreshTokenExpiryTime": "0001-01-01T00:00:00"
+  },
+  {
+    "UserId": "e55f5775-247d-460c-995f-ffdf0445b93f",
+    "Name": "nasibe",
+    "Username": "nasib123",
+    "PasswordHash": "$2a$11$B76VqL6edzY8CJgX72vni.QdAH/zYbb6gRKXQwsXts4k4J4MVMHIu",
+    "Roles": [
+      "Admin"
+    ],
+    "Permissions": [
+      "Policy.Add",
+      "Policy.Edit",
+      "Policy.Delete",
+      "Policy.List",
+      "Document.Add",
+      "Document.List"
+    ],
+    "RefreshToken": "",
+    "RefreshTokenExpiryTime": "0001-01-01T00:00:00"
   }
 ]

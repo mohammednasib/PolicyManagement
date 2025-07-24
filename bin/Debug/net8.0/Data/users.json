@@ -122,10 +122,10 @@
     "RefreshTokenExpiryTime": "0001-01-01T00:00:00"
   },
   {
-    "UserId": "dec3f884-32f5-49de-a56a-5c48fa6dae14",
-    "Name": "nasib",
-    "Username": "nasib1",
-    "PasswordHash": "$2a$11$ioJ9OiFMXvR/i07peMCAeu07r7RnweUP/wsXxH0dd4Dh81uIlHYyC",
+    "UserId": "c235b3c0-1b1e-496a-835b-c27f47be588e",
+    "Name": "nasibe",
+    "Username": "nasib12",
+    "PasswordHash": "$2a$11$pVfYgKgQfod9D.JHskpcQOJ0THiVgSp/umbaubpNvxD.CXETGSks6",
     "Roles": [
       "Admin"
     ],
@@ -137,7 +137,7 @@
       "Document.Add",
       "Document.List"
     ],
-    "RefreshToken": null,
-    "RefreshTokenExpiryTime": null
+    "RefreshToken": "",
+    "RefreshTokenExpiryTime": "0001-01-01T00:00:00"
   }
 ]
